@@ -1,4 +1,4 @@
-const e = require('express')
+const express = require('express')
 const validator = require('validator')
 const validate = user => {
     let error = {}
@@ -14,7 +14,7 @@ const validate = user => {
 
     if(!user.password) {
         error.password = 'Please provide a password'
-    } else if(user.password < 6) {
+    } else if(user.password.length < 6) {
         error.password = 'Passsword must be a greater than or Equal 6 Character'
     }
 
